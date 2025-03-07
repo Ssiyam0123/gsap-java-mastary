@@ -6,7 +6,26 @@ gsap.registerPlugin(ScrollTrigger);
 
 const GsapScrollTrigger = () => {
   // TODO: Implement the gsap scroll trigger
+  const scrollRef = useRef();
 
+  useGSAP(() => {
+    const boxes = gsap.utils.toArray(scrollRef.current.children);
+    // console.log(boxes)
+    boxes.forEach((box) => {
+      gsap.to(box, {
+        x: 150 * (boxes.indexOf(box) + 5),
+        rotation: 360,
+        borderRadius: "100%",
+        scale: 1.5,
+        scrollTrigger: {
+          trigger: box,
+          start: "bottom bottom",
+          end: "top 20%",
+          scrub: true,
+        },
+      });
+    });
+  }, {scope: scrollRef});
 
   return (
     <main>
