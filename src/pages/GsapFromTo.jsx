@@ -9,15 +9,15 @@ const GsapFromTo = () => {
       x:0,
       rotate:0,
       borderRadius:"0%",
-      duration:3
+      // duration:3
     },
     {
       x: 250,
       repeat:-1,
       yoyo:true,
       rotate:360,
-      ease: 'elastic',
-      duration: 3,
+      // ease: 'elastic',
+      // duration: 3,
       borderRadius:"100%"
     })
   },[])
